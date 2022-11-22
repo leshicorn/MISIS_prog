@@ -1,8 +1,8 @@
 CC=g++
 CFLAGS= -Wall -Wextra -Wpedantic -g
-NAME =  b
-CNAME = b.cpp
-ONAME = b.o
+NAME =  task
+CNAME = task.cpp
+ONAME = task.o
 
 objs:
 	$(CC) $(CFLAGS) -c $(CNAME)
