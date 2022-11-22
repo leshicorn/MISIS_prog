@@ -39,12 +39,12 @@ def how_to_run(filename,start_time):
 				exit()
 		if filename.endswith('.py'):
 			if run(['python3','-m','py_compile',filename]).returncode:
-				# print(file=stderr)
+				print(file=stderr)
 				exit()
 			try:
 				compile(filename,cfile=compiled_file,optimize=2,doraise=True)
 			except Exception:
-				# print(format_exc(),stderr)
+				print(format_exc(),stderr)
 				exit()
 		if filename.endswith('.out'):
 			if run(['cp',filename,compiled_file]).returncode:
@@ -73,7 +73,6 @@ def run_with_time(a) -> str:
 	if b'real' in t:
 		t=t.split(b'real',1)[1]
 	t=t.strip()
-	# print(t)
 	return t.decode(errors='replace')
 
 res=[]
