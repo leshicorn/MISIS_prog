@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <time.h>
 #include <iostream>
 
 #define OPEN_ERROR -1
@@ -13,6 +14,9 @@ void gen_tests(int n, FILE* fp)
 
 int main()
 {
+    time_t t;
+    srand((unsigned) time(&t));
+    
     FILE* fp;;
     if ((fp = fopen("test.txt", "w")) == NULL)
     {
