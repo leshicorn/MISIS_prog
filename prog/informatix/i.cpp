@@ -1,30 +1,42 @@
-#include <stdio.h>
 #include <iostream>
-#include <sstream>
 #include <vector>
-#include <stdlib.h>
+#include <sstream>
+#include <string>
 
-#define MAX 50001
-#define INPUT_ERROR -1
-#define g adjacency_matrix
-char s[MAX];
-std::vector<std::vector<int>> g;
+#define ll long long int
+#define cout std::cout
+#define cin std::cin
+#define endl std::endl
+#define string std::string
+#define vector std::vector
 
 int main()
 {
-    int n = 0;
-
-    scanf("%d",&n); 
-    fgets(s, sizeof(s), stdin);
-    if (s == NULL) return INPUT_ERROR;
-    g.resize(n + 1);
-
-    for(int i = 1; i <= n; i++)
+    ll n = 0;
+    cin >> n;
+    vector<vector<ll>> vec(n + 1);
+    
+    for (ll i = 0; i <= n; i++)
     {
-        fgets(s, sizeof(s), stdin);
-        std::stringstream ss(s);
-          while (ss >> val)
-          g[val].push_back(i);
+        ll temp = 0;
+        string req;
+        std::getline(cin, req);
+        std::stringstream strm(req);
+        while (strm >> temp)
+        {
+            vec[temp].push_back(i);
+        }
+    }
 
-}
+    cout << n << "\n";
+
+    for (ll i = 1; i < vec.size(); i++)
+    {
+        for (ll j = 0; j < vec[i].size(); j++)
+        {
+            cout << vec[i][j] << " ";
+        }
+        cout << "\n";
+    }
+    return 0;
 }
