@@ -50,5 +50,7 @@ int main(int argc, char *argv[])
 
     fclose(original_file);
 
+    free(array);
+    
     return 0;
 }
